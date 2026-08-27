@@ -1,11 +1,241 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import "../styles/global.css";
+const title = "Carnicería El Vaquero | Cortes Premium en Aguascalientes";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+  </head>
+  <body class="bg-stone-50 text-stone-800 font-sans antialiased">
+    <!-- Navbar -->
+    <nav class="bg-stone-900 text-white py-4 px-6 fixed w-full z-50 shadow-lg">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <h1
+          class="text-2xl font-serif font-bold tracking-widest text-red-600 uppercase"
+        >
+          El Vaquero
+        </h1>
+        <ul class="hidden md:flex space-x-8 text-sm font-light tracking-wide">
+          <li>
+            <a href="#inicio" class="hover:text-red-500 transition-colors"
+              >Inicio</a
+            >
+          </li>
+          <li>
+            <a href="#cortes" class="hover:text-red-500 transition-colors"
+              >Nuestros Cortes</a
+            >
+          </li>
+          <li>
+            <a href="#ubicacion" class="hover:text-red-500 transition-colors"
+              >Ubicación</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      id="inicio"
+      class="relative pt-32 pb-20 md:pt-48 md:pb-32 bg-stone-900 overflow-hidden"
+    >
+      <!-- Overlay oscuro para elegancia -->
+      <div class="absolute inset-0 bg-black/60 z-10"></div>
+      <!-- Imagen de fondo (placeholder) -->
+      <img
+        src="https://images.unsplash.com/photo-1603048297172-c92544798d5e?q=80&w=2070&auto=format&fit=crop"
+        alt="Cortes de carne premium"
+        class="absolute inset-0 w-full h-full object-cover z-0 opacity-50"
+      />
+
+      <div class="relative z-20 max-w-7xl mx-auto px-6 text-center">
+        <span
+          class="text-red-500 font-semibold tracking-[0.2em] uppercase text-sm mb-4 block"
+        >
+          Tradición y Calidad en Aguascalientes
+        </span>
+        <h2
+          class="text-5xl md:text-7xl font-serif font-bold text-white mb-6 drop-shadow-lg"
+        >
+          CARNICERÍA <span class="text-red-600">EL VAQUERO</span>
+        </h2>
+        <p
+          class="text-stone-300 max-w-2xl mx-auto text-lg md:text-xl font-light mb-10"
+        >
+          Selección exclusiva de cortes finos. Elevamos tu experiencia en la
+          parrilla con la mejor carne de la región.
+        </p>
+        <a
+          href="#cortes"
+          class="inline-block bg-red-700 hover:bg-red-800 text-white font-medium py-3 px-8 rounded-sm transition-all duration-300 shadow-[0_0_15px_rgba(185,28,28,0.5)]"
+        >
+          Descubrir Cortes
+        </a>
+      </div>
+    </section>
+
+    <!-- Sección de Atributos -->
+    <section class="py-20 bg-white">
+      <div
+        class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12 text-center"
+      >
+        <div>
+          <div
+            class="w-16 h-16 mx-auto bg-red-50 text-red-700 rounded-full flex items-center justify-center mb-6 text-2xl"
+          >
+            🥩
+          </div>
+          <h3 class="text-xl font-serif font-bold mb-3">Calidad Premium</h3>
+          <p class="text-stone-600 font-light">
+            Ganado seleccionado meticulosamente para garantizar la máxima
+            suavidad y sabor en cada bocado.
+          </p>
+        </div>
+        <div>
+          <div
+            class="w-16 h-16 mx-auto bg-red-50 text-red-700 rounded-full flex items-center justify-center mb-6 text-2xl"
+          >
+            📍
+          </div>
+          <h3 class="text-xl font-serif font-bold mb-3">Orgullo Hidrocálido</h3>
+          <p class="text-stone-600 font-light">
+            Ubicados en el corazón de Aguascalientes, apoyando la economía local
+            y sirviendo a nuestra comunidad.
+          </p>
+        </div>
+        <div>
+          <div
+            class="w-16 h-16 mx-auto bg-red-50 text-red-700 rounded-full flex items-center justify-center mb-6 text-2xl"
+          >
+            🔪
+          </div>
+          <h3 class="text-xl font-serif font-bold mb-3">Cortes Maestros</h3>
+          <p class="text-stone-600 font-light">
+            Tablajeros expertos que preparan tu carne exactamente con el grosor
+            y especificaciones que necesitas.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Productos / Cortes -->
+    <section id="cortes" class="py-24 bg-stone-100">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-serif font-bold text-stone-900 mb-4">
+            Nuestra Selección
+          </h2>
+          <div class="w-24 h-1 bg-red-600 mx-auto"></div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Tarjeta 1 -->
+          <div
+            class="bg-white group overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300"
+          >
+            <div class="h-64 overflow-hidden bg-stone-200">
+              <img
+                src="https://images.unsplash.com/photo-1558030006-450675393462?q=80&w=2069&auto=format&fit=crop"
+                alt="Ribeye"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div class="p-8 text-center border-t-4 border-red-700">
+              <h3 class="text-2xl font-serif font-bold mb-2">
+                Ribeye High Choice
+              </h3>
+              <p class="text-stone-600 font-light text-sm">
+                Marmoleo abundante, textura suave y un sabor inigualable para la
+                parrilla.
+              </p>
+            </div>
+          </div>
+
+          <!-- Tarjeta 2 -->
+          <div
+            class="bg-white group overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300"
+          >
+            <div class="h-64 overflow-hidden bg-stone-200">
+              <img
+                src="https://images.unsplash.com/photo-1615937691194-97dbd3f3dc29?q=80&w=2070&auto=format&fit=crop"
+                alt="Tomahawk"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div class="p-8 text-center border-t-4 border-red-700">
+              <h3 class="text-2xl font-serif font-bold mb-2">Tomahawk</h3>
+              <p class="text-stone-600 font-light text-sm">
+                El rey de los cortes. Espectacular a la vista y jugoso al
+                paladar.
+              </p>
+            </div>
+          </div>
+
+          <!-- Tarjeta 3 -->
+          <div
+            class="bg-white group overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300"
+          >
+            <div class="h-64 overflow-hidden bg-stone-200">
+              <img
+                src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?q=80&w=2070&auto=format&fit=crop"
+                alt="Arrachera"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div class="p-8 text-center border-t-4 border-red-700">
+              <h3 class="text-2xl font-serif font-bold mb-2">
+                Arrachera Marinada
+              </h3>
+              <p class="text-stone-600 font-light text-sm">
+                Nuestra receta secreta de la casa. Suave, jugosa y lista para el
+                asador.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer / Ubicación -->
+    <footer
+      id="ubicacion"
+      class="bg-stone-900 text-stone-400 py-12 border-t border-stone-800"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-8 items-center"
+      >
+        <div>
+          <h2 class="text-3xl font-serif font-bold text-white mb-4">
+            Visítanos en Aguascalientes
+          </h2>
+          <p class="mb-2">
+            <strong class="text-red-500">Dirección:</strong> Av. Principal #123, Centro,
+            Aguascalientes, Ags.
+          </p>
+          <p class="mb-2">
+            <strong class="text-red-500">Teléfono:</strong> (449) 123-4567
+          </p>
+          <p>
+            <strong class="text-red-500">Horario:</strong> Lunes a Domingo, 8:00 AM
+            - 6:00 PM
+          </p>
+        </div>
+        <div class="text-right">
+          <h1
+            class="text-4xl font-serif font-bold tracking-widest text-red-600 uppercase mb-2"
+          >
+            El Vaquero
+          </h1>
+          <p class="text-sm">
+            © 2026 Carnicería El Vaquero. Todos los derechos reservados.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
