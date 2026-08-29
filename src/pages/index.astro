@@ -130,57 +130,68 @@ const title = "Carnicería El Vaquero | Cortes Premium en Aguascalientes";
         </div>
 
         <div class="grid md:grid-cols-4 gap-8">
+          <!-- CARD 1: CERDO -->
           <div
-            class="relative bg-white group overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300"
+            onclick="this.classList.toggle('active')"
+            class="relative bg-white group overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 cursor-pointer h-[520px]"
           >
+            <!-- Frente -->
             <div
-              class="transition-opacity duration-500 ease-in-out group-hover:opacity-0 flex flex-col h-full"
+              class="absolute inset-0 transition-opacity duration-500 ease-in-out group-hover:opacity-0 group-[.active]:opacity-0 flex flex-col"
             >
               <div class="h-64 overflow-hidden bg-stone-200 shrink-0">
                 <img
                   src="https://images.unsplash.com/photo-1558030006-450675393462?q=80&w=2069&auto=format&fit=crop"
-                  alt="Ribeye"
+                  alt="Cerdo"
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <div class="p-8 text-center border-t-4 border-red-700 flex-grow">
+
+              <div
+                class="p-8 text-center border-t-4 border-red-700 flex-grow flex flex-col justify-center"
+              >
                 <h3 class="text-2xl font-serif font-bold mb-2">
                   Cerdo de Primera Calidad
                 </h3>
+
+                <p class="text-sm text-stone-500 mt-3 md:hidden">
+                  Toca para ver los cortes
+                </p>
               </div>
             </div>
 
+            <!-- Reverso -->
             <div
-              class="absolute inset-0 bg-stone-900 text-stone-100 p-6 flex items-center justify-center text-center opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100 border-t-4 border-red-700"
+              class="absolute inset-0 bg-stone-900 text-stone-100 p-6 flex items-center justify-center text-center opacity-0 group-hover:opacity-100 group-[.active]:opacity-100 transition-opacity duration-500 ease-in-out border-t-4 border-red-700"
             >
               <ul class="w-full space-y-3">
                 <li
-                  class="bg-stone-50 px-4 py-2.5 rounded text-stone-600 font-light border-l-2 border-red-600 hover:bg-red-50 hover:text-red-800 transition-colors"
+                  class="bg-stone-50 px-4 py-2.5 rounded text-stone-600 font-light border-l-2 border-red-600"
                 >
                   Bistec de puerco
                 </li>
                 <li
-                  class="bg-stone-50 px-4 py-2.5 rounded text-stone-600 font-light border-l-2 border-red-600 hover:bg-red-50 hover:text-red-800 transition-colors"
+                  class="bg-stone-50 px-4 py-2.5 rounded text-stone-600 font-light border-l-2 border-red-600"
                 >
                   Trocitos y costilla
                 </li>
                 <li
-                  class="bg-stone-50 px-4 py-2.5 rounded text-stone-600 font-light border-l-2 border-red-600 hover:bg-red-50 hover:text-red-800 transition-colors"
+                  class="bg-stone-50 px-4 py-2.5 rounded text-stone-600 font-light border-l-2 border-red-600"
                 >
                   Buche y Lengua
                 </li>
                 <li
-                  class="bg-stone-50 px-4 py-2.5 rounded text-stone-600 font-light border-l-2 border-red-600 hover:bg-red-50 hover:text-red-800 transition-colors"
+                  class="bg-stone-50 px-4 py-2.5 rounded text-stone-600 font-light border-l-2 border-red-600"
                 >
                   Espinazo y Chamorro
                 </li>
                 <li
-                  class="bg-stone-50 px-4 py-2.5 rounded text-stone-600 font-light border-l-2 border-red-600 hover:bg-red-50 hover:text-red-800 transition-colors"
+                  class="bg-stone-50 px-4 py-2.5 rounded text-stone-600 font-light border-l-2 border-red-600"
                 >
                   Lechón y Cabeza de puerco
                 </li>
                 <li
-                  class="bg-stone-50 px-4 py-2.5 rounded text-stone-600 font-light border-l-2 border-red-600 hover:bg-red-50 hover:text-red-800 transition-colors"
+                  class="bg-stone-50 px-4 py-2.5 rounded text-stone-600 font-light border-l-2 border-red-600"
                 >
                   Chicharrón prensado y duro
                 </li>
@@ -188,46 +199,58 @@ const title = "Carnicería El Vaquero | Cortes Premium en Aguascalientes";
             </div>
           </div>
 
+          <!-- CARD 2: ESPECIALIDADES -->
           <div
-            class="relative bg-white group overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300"
+            onclick="this.classList.toggle('active')"
+            class="relative bg-white group overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 cursor-pointer h-[520px]"
           >
+            <!-- Frente -->
             <div
-              class="transition-opacity duration-500 ease-in-out group-hover:opacity-0 flex flex-col h-full"
+              class="absolute inset-0 transition-opacity duration-500 ease-in-out group-hover:opacity-0 group-[.active]:opacity-0 flex flex-col"
             >
               <div class="h-64 overflow-hidden bg-stone-200 shrink-0">
                 <img
                   src="https://images.unsplash.com/photo-1615937691194-97dbd3f3dc29?q=80&w=2070&auto=format&fit=crop"
-                  alt="Tomahawk"
+                  alt="Especialidades"
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <div class="p-8 text-center border-t-4 border-red-700 flex-grow">
+
+              <div
+                class="p-8 text-center border-t-4 border-red-700 flex-grow flex flex-col justify-center"
+              >
                 <h3 class="text-2xl font-serif font-bold mb-2">
                   Especialidades de la Casa
                 </h3>
+
+                <p class="text-sm text-stone-500 mt-3 md:hidden">
+                  Toca para ver las especialidades
+                </p>
               </div>
             </div>
+
+            <!-- Reverso -->
             <div
-              class="absolute inset-0 bg-stone-900 text-stone-100 p-6 flex items-center justify-center text-center opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100 border-t-4 border-red-700"
+              class="absolute inset-0 bg-stone-900 text-stone-100 p-6 flex items-center justify-center text-center opacity-0 group-hover:opacity-100 group-[.active]:opacity-100 transition-opacity duration-500 ease-in-out border-t-4 border-red-700"
             >
               <ul class="w-full space-y-3">
                 <li
-                  class="bg-stone-50 px-4 py-2.5 rounded text-stone-600 font-light border-l-2 border-orange-500 hover:bg-orange-50 hover:text-orange-800 transition-colors"
+                  class="bg-stone-50 px-4 py-2.5 rounded text-stone-600 font-light border-l-2 border-orange-500"
                 >
                   Pastor
                 </li>
                 <li
-                  class="bg-stone-50 px-4 py-2.5 rounded text-stone-600 font-light border-l-2 border-orange-500 hover:bg-orange-50 hover:text-orange-800 transition-colors"
+                  class="bg-stone-50 px-4 py-2.5 rounded text-stone-600 font-light border-l-2 border-orange-500"
                 >
                   Adobada
                 </li>
                 <li
-                  class="bg-stone-50 px-4 py-2.5 rounded text-stone-600 font-light border-l-2 border-orange-500 hover:bg-orange-50 hover:text-orange-800 transition-colors"
+                  class="bg-stone-50 px-4 py-2.5 rounded text-stone-600 font-light border-l-2 border-orange-500"
                 >
                   Chorizo
                 </li>
                 <li
-                  class="bg-stone-50 px-4 py-2.5 rounded text-stone-600 font-light border-l-2 border-orange-500 hover:bg-orange-50 hover:text-orange-800 transition-colors"
+                  class="bg-stone-50 px-4 py-2.5 rounded text-stone-600 font-light border-l-2 border-orange-500"
                 >
                   Alitas adobadas
                 </li>
@@ -235,46 +258,58 @@ const title = "Carnicería El Vaquero | Cortes Premium en Aguascalientes";
             </div>
           </div>
 
+          <!-- CARD 3: RES -->
           <div
-            class="relative bg-white group overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300"
+            onclick="this.classList.toggle('active')"
+            class="relative bg-white group overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 cursor-pointer h-[520px]"
           >
+            <!-- Frente -->
             <div
-              class="transition-opacity duration-500 ease-in-out group-hover:opacity-0 flex flex-col h-full"
+              class="absolute inset-0 transition-opacity duration-500 ease-in-out group-hover:opacity-0 group-[.active]:opacity-0 flex flex-col"
             >
               <div class="h-64 overflow-hidden bg-stone-200 shrink-0">
                 <img
                   src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?q=80&w=2070&auto=format&fit=crop"
-                  alt="Arrachera"
+                  alt="Cortes de res"
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <div class="p-8 text-center border-t-4 border-red-700 flex-grow">
+
+              <div
+                class="p-8 text-center border-t-4 border-red-700 flex-grow flex flex-col justify-center"
+              >
                 <h3 class="text-2xl font-serif font-bold mb-2">
                   Cortes de Res Selectos
                 </h3>
+
+                <p class="text-sm text-stone-500 mt-3 md:hidden">
+                  Toca para ver los cortes
+                </p>
               </div>
             </div>
+
+            <!-- Reverso -->
             <div
-              class="absolute inset-0 bg-stone-900 text-stone-100 p-6 flex items-center justify-center text-center opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100 border-t-4 border-red-700"
+              class="absolute inset-0 bg-stone-900 text-stone-100 p-6 flex items-center justify-center text-center opacity-0 group-hover:opacity-100 group-[.active]:opacity-100 transition-opacity duration-500 ease-in-out border-t-4 border-red-700"
             >
               <ul class="w-full space-y-3">
                 <li
-                  class="bg-stone-50 px-4 py-2.5 rounded text-stone-600 font-light border-l-2 border-red-800 hover:bg-red-100 hover:text-red-900 transition-colors"
+                  class="bg-stone-50 px-4 py-2.5 rounded text-stone-600 font-light border-l-2 border-red-800"
                 >
                   Bistec
                 </li>
                 <li
-                  class="bg-stone-50 px-4 py-2.5 rounded text-stone-600 font-light border-l-2 border-red-800 hover:bg-red-100 hover:text-red-900 transition-colors"
+                  class="bg-stone-50 px-4 py-2.5 rounded text-stone-600 font-light border-l-2 border-red-800"
                 >
                   Chuleta
                 </li>
                 <li
-                  class="bg-stone-50 px-4 py-2.5 rounded text-stone-600 font-light border-l-2 border-red-800 hover:bg-red-100 hover:text-red-900 transition-colors"
+                  class="bg-stone-50 px-4 py-2.5 rounded text-stone-600 font-light border-l-2 border-red-800"
                 >
                   Costilla
                 </li>
                 <li
-                  class="bg-stone-50 px-4 py-2.5 rounded text-stone-600 font-light border-l-2 border-red-800 hover:bg-red-100 hover:text-red-900 transition-colors"
+                  class="bg-stone-50 px-4 py-2.5 rounded text-stone-600 font-light border-l-2 border-red-800"
                 >
                   Rib Eye
                 </li>
@@ -282,11 +317,14 @@ const title = "Carnicería El Vaquero | Cortes Premium en Aguascalientes";
             </div>
           </div>
 
+          <!-- CARD 4: POLLO -->
           <div
-            class="relative bg-white group overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300"
+            onclick="this.classList.toggle('active')"
+            class="relative bg-white group overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 cursor-pointer h-[520px]"
           >
+            <!-- Frente -->
             <div
-              class="transition-opacity duration-500 ease-in-out group-hover:opacity-0 flex flex-col h-full"
+              class="absolute inset-0 transition-opacity duration-500 ease-in-out group-hover:opacity-0 group-[.active]:opacity-0 flex flex-col"
             >
               <div class="h-64 overflow-hidden bg-stone-200 shrink-0">
                 <img
@@ -295,23 +333,32 @@ const title = "Carnicería El Vaquero | Cortes Premium en Aguascalientes";
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <div class="p-8 text-center border-t-4 border-red-700 flex-grow">
+
+              <div
+                class="p-8 text-center border-t-4 border-red-700 flex-grow flex flex-col justify-center"
+              >
                 <h3 class="text-2xl font-serif font-bold mb-2">
                   Pollo Fresco del Día
                 </h3>
+
+                <p class="text-sm text-stone-500 mt-3 md:hidden">
+                  Toca para ver los cortes
+                </p>
               </div>
             </div>
+
+            <!-- Reverso -->
             <div
-              class="absolute inset-0 bg-stone-900 text-stone-100 p-6 flex items-center justify-center text-center opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100 border-t-4 border-red-700"
+              class="absolute inset-0 bg-stone-900 text-stone-100 p-6 flex items-center justify-center text-center opacity-0 group-hover:opacity-100 group-[.active]:opacity-100 transition-opacity duration-500 ease-in-out border-t-4 border-red-700"
             >
               <ul class="w-full space-y-3">
                 <li
-                  class="bg-stone-50 px-4 py-2.5 rounded text-stone-600 font-light border-l-2 border-yellow-500 hover:bg-yellow-50 hover:text-yellow-800 transition-colors"
+                  class="bg-stone-50 px-4 py-2.5 rounded text-stone-600 font-light border-l-2 border-yellow-500"
                 >
                   Pierna y muslo
                 </li>
                 <li
-                  class="bg-stone-50 px-4 py-2.5 rounded text-stone-600 font-light border-l-2 border-yellow-500 hover:bg-yellow-50 hover:text-yellow-800 transition-colors"
+                  class="bg-stone-50 px-4 py-2.5 rounded text-stone-600 font-light border-l-2 border-yellow-500"
                 >
                   Pechuga y filete de pollo
                 </li>
