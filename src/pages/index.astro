@@ -15,10 +15,35 @@ const title = "Carnicería El Vaquero | Cortes Premium en Aguascalientes";
     <title>{title}</title>
   </head>
   <body class="bg-stone-50 text-stone-800 font-sans antialiased">
-    <!-- Navbar -->
-    <nav class="bg-stone-900 text-white py-4 px-6 fixed w-full z-50 shadow-lg">
+    <nav
+      id="navbar"
+      class="bg-stone-900 text-white py-6 px-6 fixed w-full z-50 shadow-lg transition-all duration-500 ease-in-out"
+    >
       <div class="max-w-7xl mx-auto flex justify-between items-center">
-        <img src={logoCuernos.src} alt="El Vaquero Logo" class="h-10 w-auto" />
+        <!-- Contenedor del Logo y Texto -->
+        <a href="#inicio" class="flex items-center">
+          <!-- Imagen: Inicia más grande (h-14) y se encoge a (h-10) -->
+          <img
+            id="logo-img"
+            src={logoCuernos.src}
+            alt="El Vaquero Logo"
+            class="h-14 w-auto transition-all duration-500 ease-in-out"
+          />
+
+          <!-- Texto: Inicia visible y se colapsa al hacer scroll -->
+          <div
+            id="logo-text-wrapper"
+            class="transition-all duration-500 ease-in-out overflow-hidden max-w-[300px] opacity-100 pl-4"
+          >
+            <span
+              class="text-2xl font-bold tracking-widest whitespace-nowrap font-serif font-bold text-red-600"
+            >
+              El Vaquero
+            </span>
+          </div>
+        </a>
+
+        <!-- Menú de navegación -->
         <ul class="hidden md:flex space-x-8 text-sm font-light tracking-wide">
           <li>
             <a href="#inicio" class="hover:text-red-500 transition-colors"
@@ -132,8 +157,7 @@ const title = "Carnicería El Vaquero | Cortes Premium en Aguascalientes";
         <div class="grid md:grid-cols-4 gap-8">
           <!-- CARD 1: CERDO -->
           <div
-            onclick="this.classList.toggle('active')"
-            class="relative bg-white group overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 cursor-pointer h-[520px]"
+            class="tarjeta-producto relative bg-white group overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 cursor-pointer h-[520px]"
           >
             <!-- Frente -->
             <div
@@ -201,8 +225,7 @@ const title = "Carnicería El Vaquero | Cortes Premium en Aguascalientes";
 
           <!-- CARD 2: ESPECIALIDADES -->
           <div
-            onclick="this.classList.toggle('active')"
-            class="relative bg-white group overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 cursor-pointer h-[520px]"
+            class="tarjeta-producto relative bg-white group overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 cursor-pointer h-[520px]"
           >
             <!-- Frente -->
             <div
@@ -260,8 +283,7 @@ const title = "Carnicería El Vaquero | Cortes Premium en Aguascalientes";
 
           <!-- CARD 3: RES -->
           <div
-            onclick="this.classList.toggle('active')"
-            class="relative bg-white group overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 cursor-pointer h-[520px]"
+            class="tarjeta-producto relative bg-white group overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 cursor-pointer h-[520px]"
           >
             <!-- Frente -->
             <div
@@ -319,8 +341,7 @@ const title = "Carnicería El Vaquero | Cortes Premium en Aguascalientes";
 
           <!-- CARD 4: POLLO -->
           <div
-            onclick="this.classList.toggle('active')"
-            class="relative bg-white group overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 cursor-pointer h-[520px]"
+            class="tarjeta-producto relative bg-white group overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 cursor-pointer h-[520px]"
           >
             <!-- Frente -->
             <div
@@ -410,3 +431,58 @@ const title = "Carnicería El Vaquero | Cortes Premium en Aguascalientes";
     </div>
   </footer>
 </html>
+
+<script>
+  function toggleNavbarOnScroll() {
+    const navbar = document.getElementById("navbar");
+    const logoImg = document.getElementById("logo-img");
+    const textWrapper = document.getElementById("logo-text-wrapper");
+
+    if (!navbar || !logoImg || !textWrapper) return;
+
+    if (window.scrollY > 20) {
+      navbar.classList.remove("py-6");
+      navbar.classList.add("py-2");
+      logoImg.classList.remove("h-14");
+      logoImg.classList.add("h-10");
+      textWrapper.classList.remove("max-w-[300px]", "opacity-100", "pl-4");
+      textWrapper.classList.add("max-w-0", "opacity-0", "pl-0");
+    } else {
+      navbar.classList.remove("py-2");
+      navbar.classList.add("py-6");
+      logoImg.classList.remove("h-10");
+      logoImg.classList.add("h-14");
+      textWrapper.classList.remove("max-w-0", "opacity-0", "pl-0");
+      textWrapper.classList.add("max-w-[300px]", "opacity-100", "pl-4");
+    }
+  }
+
+  window.addEventListener("scroll", toggleNavbarOnScroll);
+  toggleNavbarOnScroll();
+
+  // --- NUEVA LÓGICA DE LAS TARJETAS ---
+  const tarjetas = document.querySelectorAll(".tarjeta-producto");
+
+  tarjetas.forEach((tarjeta) => {
+    tarjeta.addEventListener("click", function (e) {
+      // Verificamos si la tarjeta actual ya está activa
+      const estaActiva = this.classList.contains("active");
+
+      // 1. Removemos la clase 'active' de TODAS las tarjetas
+      tarjetas.forEach((t) => t.classList.remove("active"));
+
+      // 2. Si la tarjeta que tocamos NO estaba activa, la activamos.
+      // (Si ya estaba activa, se quedará cerrada gracias al paso anterior).
+      if (!estaActiva) {
+        this.classList.add("active");
+      }
+    });
+  });
+
+  // (Opcional) Cerrar las tarjetas si el usuario toca en cualquier otra parte de la pantalla
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".tarjeta-producto")) {
+      tarjetas.forEach((t) => t.classList.remove("active"));
+    }
+  });
+</script>
