@@ -17,7 +17,7 @@ const title = "Carnicería El Vaquero | Cortes Premium en Aguascalientes";
   <body class="bg-stone-50 text-stone-800 font-sans antialiased">
     <nav
       id="navbar"
-      class="bg-stone-900 text-white py-6 px-6 fixed w-full z-50 shadow-lg transition-all duration-500 ease-in-out"
+      class="bg-stone-900 text-white py-4 px-4 fixed w-full z-50 shadow-lg transition-all duration-500 ease-in-out"
     >
       <div class="max-w-7xl mx-auto flex justify-between items-center">
         <!-- Contenedor del Logo y Texto -->
@@ -33,7 +33,7 @@ const title = "Carnicería El Vaquero | Cortes Premium en Aguascalientes";
           <!-- Texto: Inicia visible y se colapsa al hacer scroll -->
           <div
             id="logo-text-wrapper"
-            class="transition-all duration-500 ease-in-out overflow-hidden max-w-[300px] opacity-100 pl-4"
+            class="hidden md:block transition-all duration-500 ease-in-out overflow-hidden max-w-[300px] opacity-100 pl-4"
           >
             <span
               class="text-2xl font-bold tracking-widest whitespace-nowrap font-serif font-bold text-red-600"
@@ -441,7 +441,7 @@ const title = "Carnicería El Vaquero | Cortes Premium en Aguascalientes";
     if (!navbar || !logoImg || !textWrapper) return;
 
     if (window.scrollY > 20) {
-      navbar.classList.remove("py-6");
+      navbar.classList.remove("py-4");
       navbar.classList.add("py-2");
       logoImg.classList.remove("h-14");
       logoImg.classList.add("h-10");
@@ -449,7 +449,7 @@ const title = "Carnicería El Vaquero | Cortes Premium en Aguascalientes";
       textWrapper.classList.add("max-w-0", "opacity-0", "pl-0");
     } else {
       navbar.classList.remove("py-2");
-      navbar.classList.add("py-6");
+      navbar.classList.add("py-4");
       logoImg.classList.remove("h-10");
       logoImg.classList.add("h-14");
       textWrapper.classList.remove("max-w-0", "opacity-0", "pl-0");
